@@ -1,0 +1,18 @@
+# 秘密情報は絶対にコミットしない。
+# QR 画像 = 2FA シークレットそのもの、.env = 抽出済みシークレット。
+secrets/*
+!secrets/.gitkeep
+
+.env
+*.env
+!.env.example
+
+# Python / uv
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Vercel
+.vercel/
+.vercel

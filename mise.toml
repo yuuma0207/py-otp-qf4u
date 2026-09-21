@@ -1,0 +1,7 @@
+[tools]
+python = "3.12"
+uv = "latest"
+
+# secrets/.env は sync スクリプトが生成する。存在すればローカル実行時に読み込む。
+[env]
+_.file = { path = "secrets/.env", redact = true }

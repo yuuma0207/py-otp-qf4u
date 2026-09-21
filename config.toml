@@ -1,0 +1,22 @@
+# OTP を発行するアカウント一覧。
+#   name : Discord の返信に表示されるサービス名 兼 環境変数キーの元
+#   qr   : secrets/ 配下に置く QR コード画像のファイル名
+#
+# アカウントを追加するには:
+#   1. secrets/ に QR 画像を置く
+#   2. ここに [[accounts]] を1つ足す
+#   3. `uv run sync` を実行してシークレットを抽出・登録する
+#
+# name から環境変数キーが作られる（大文字化し英数字以外は _ に）:
+#   "Google"      -> TOTP_SECRET_GOOGLE
+#   "GitHub"      -> TOTP_SECRET_GITHUB
+#   "My Service"  -> TOTP_SECRET_MY_SERVICE
+# シークレットそのものは環境変数に入り、この repo には含めない。
+
+[[accounts]]
+name = "Google"
+qr = "google-account.png"
+
+# [[accounts]]
+# name = "GitHub"
+# qr = "github.png"

@@ -1,0 +1,26 @@
+[project]
+name = "py-otp-qf4u"
+version = "0.1.0"
+description = "Discord スラッシュコマンドで共有アカウントの TOTP を発行する Vercel サーバーレス関数"
+readme = "README.md"
+requires-python = ">=3.12"
+
+# Vercel の関数(api/)で必要な実行時依存のみ。requirements.txt と一致させること。
+dependencies = [
+    "pyotp>=2.9.0",
+    "pynacl>=1.5.0",
+]
+
+# ローカル専用（QR デコード・コマンド登録・テスト）。Vercel には載せない。
+[dependency-groups]
+dev = [
+    "opencv-python-headless>=4.10",
+    "numpy>=1.26",
+    "requests>=2.32",
+    "pytest>=8.0",
+    "qrcode[pil]>=7.4",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
